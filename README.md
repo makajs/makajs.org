@@ -1,2 +1,3 @@
 # makajs.org
-home page
+The official documentation site for Maka.js. https://makajs.org
+
