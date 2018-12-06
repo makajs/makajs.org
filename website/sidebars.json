@@ -1,0 +1,45 @@
+{
+  "docs": {
+    "Introduction": [
+      "what-is-maka",
+      "installation",
+      "cli"
+    ],
+    "Configuration": [
+      "configuration",
+      "uplinks",
+      "packages",
+      "authentification",
+      "notifications",
+      "logger",
+      "webui"
+    ],
+    "Server": [
+      "server-configuration",
+      "reverse-proxy",
+      "ssl",
+      "windows",
+      "iss-server"
+    ],
+    "Plugins": [
+      "plugins",
+      "dev-plugins"
+    ],
+    "DevOps": [
+      "docker",
+      "kubernetes",
+      "ansible",
+      "puppet",
+      "chef",
+      "ci"
+    ],
+    "Development": [
+      "build",
+      "contributing",
+      "source-code",
+      "unit-testing",
+      "node-api"
+    ],
+    "Guides": ["protect-your-dependencies"]
+  }
+}

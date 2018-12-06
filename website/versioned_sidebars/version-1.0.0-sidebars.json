@@ -1,0 +1,43 @@
+{
+  "version-1.0.0-docs": {
+    "Introduction": [
+      "version-1.0.0-what-is-maka",
+      "version-1.0.0-example",
+      "version-1.0.0-installation",
+      "version-1.0.0-getting-started",
+      "version-1.0.0-cli"
+    ],
+    "Main concepts": [
+      "version-1.0.0-main-concepts-state",
+      "version-1.0.0-main-concepts-action",
+      "version-1.0.0-main-concepts-view"
+    ],
+    "Advanced concepts": [
+      "version-1.0.0-advanced-concepts-expression",
+      "version-1.0.0-advanced-concepts-props",
+      "version-1.0.0-advanced-concepts-register-component",
+      "version-1.0.0-advanced-concepts-register-template",
+      "version-1.0.0-advanced-concepts-register-action"
+    ],
+    "App && Hub": [
+      "version-1.0.0-app",
+      "version-1.0.0-hub"
+    ],
+    "Maka API":[
+      "version-1.0.0-api"
+    ],
+    "Ajax && Mock": [
+      "version-1.0.0-ajax",
+      "version-1.0.0-mock"
+    ],
+    "Navigate": [
+      "version-1.0.0-navigate"
+    ],
+    "Team":[
+      "version-1.0.0-team"
+    ],
+    "Done":[
+      "version-1.0.0-done"
+    ]
+  }
+}
