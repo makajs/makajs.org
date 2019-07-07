@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd 
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- 提供方应用信息，用于计算依赖关系-->
+	<dubbo:application name="set-service"/>
+	
+	<!-- 使用multicast广播注册中心暴露服务地址  -->
+    <dubbo:registry address="${dubbo.registry.address}" file="${dubbo.registry.file}" group="${dubbo.registry.group}" />
+
+	<!-- 用dubbo协议在21881端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="${dubbo.protocol.port}" />
+	
+	<!--关闭所有服务的启动时检查：(没有提供者时报错)-->
+	<dubbo:consumer  timeout="30000" check="false" retries="0" />
+		
+	<!-- 使用注解方式暴露接口 -->     
+    <dubbo:annotation package="com.makajs.erp.sys.impl" service-group="${dubbo.service.group}"  reference-group="${dubbo.reference.group}" /> 
+      
+    <!-- 加入spring注解扫描 -->  
+    <context:component-scan base-package="com.makajs.erp.sys.impl"/>  
+	 
+</beans>

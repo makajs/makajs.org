@@ -1,0 +1,1 @@
+nohup java -Dzkserver="zookeeper.mk.com:2181" -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8984 -jar ../yj-service.jar &

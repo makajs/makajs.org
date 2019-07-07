@@ -11,8 +11,8 @@ function handler(context, payload){
 var handlers = {
     test:function(args){
         var DubboServiceHelper = Java.type('com.mk.eap.common.utils.DubboServiceHelper')
-        var SysTaskDto = Java.type('com.mkdemo.erp.sys.dto.SysTaskDto');
-        var itfName = "com.mkdemo.erp.sys.itf.ISysTaskService"
+        var SysTaskDto = Java.type('com.makajs.erp.sys.dto.SysTaskDto');
+        var itfName = "com.makajs.erp.sys.itf.ISysTaskService"
 
         var taskService = DubboServiceHelper.getService(itfName)
         var dto  = new SysTaskDto();

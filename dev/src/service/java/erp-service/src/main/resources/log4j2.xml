@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!-- status=debug 可以查看log4j的装配过程 -->  
+<configuration status="off" monitorInterval="1800">  
+    <properties>  
+        <property name="LOG_HOME">../logs/</property>  
+        <!-- 日志备份目录 -->  
+        <property name="BACKUP_HOME">{LOG_HOME}/backup</property>  
+        <property name="APP_NAME">yj-service</property>  
+		<Property name="PATTERN">%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n</Property>
+    </properties>  
+    <appenders>  
+        <!-- 定义控制台输出 -->  
+        <Console name="Console" target="SYSTEM_OUT" follow="true">  
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />  
+        </Console>  
+        <!-- 程序员调试日志 -->  
+        <RollingRandomAccessFile name="DevLog" fileName="${LOG_HOME}/${APP_NAME}.log"  
+            filePattern="${LOG_HOME}/${APP_NAME}.%d{yyyy-MM-dd-HH}.log">  
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n" />  
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />  
+            </Policies>  
+        </RollingRandomAccessFile>  
+		 <!--
+		<Socket name="Logstash" host="10.26.84.241" port="4560" protocol="TCP">
+            <PatternLayout pattern="${PATTERN}" />
+        </Socket>--> 
+    </appenders>  
+    <loggers>  
+        <!-- 3rdparty Loggers -->  
+        <logger name="org.springframework.core" level="WARN">  
+        </logger>  
+        <logger name="org.springframework.beans" level="WARN">  
+        </logger>  
+        <logger name="org.springframework.context" level="WARN">  
+        </logger>  
+        <logger name="org.springframework.web" level="WARN">  
+        </logger>  
+        <logger name="org.jboss.netty" level="WARN">  
+        </logger>  
+        <logger name="org.apache.http" level="WARN">  
+        </logger>  
+	    <logger name="com.alibaba.dubbo" level="WARN">  
+		     <appender-ref ref="DevLog" />  
+        </logger>  
+
+        <!-- Root Logger -->  
+        <root level="WARN">  
+            <appender-ref ref="DevLog" />  
+            <appender-ref ref="Console" />  
+        </root>  
+    </loggers>  
+</configuration>

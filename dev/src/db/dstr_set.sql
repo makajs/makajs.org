@@ -97,3 +97,4 @@ CREATE TABLE IF NOT EXISTS`set_person`  (
   INDEX `set_person.department`(`departmentId`) USING BTREE,
   CONSTRAINT `set_person.department` FOREIGN KEY (`departmentId`) REFERENCES `set_department` (`id`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '人员表' ROW_FORMAT = Dynamic;
+
