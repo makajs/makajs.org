@@ -1,13 +1,13 @@
 
-echo stop $(date)
-cd scripts
-sh stop.sh
-cd ..
+#echo stop $(date)
+#cd scripts
+#sh stop.sh
+#cd ..
 
 echo build $(date)
 cd ../../src/service/java 
-mvn clean
-mvn clean package install -Dmaven.test.skip=true    
+#mvn clean
+#mvn clean package install -Dmaven.test.skip=true    
   
 echo copy  $(date)
 cd ../../../server/local
